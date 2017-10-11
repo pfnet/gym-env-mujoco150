@@ -1,6 +1,7 @@
 import numpy as np
 from gym import utils
 from gym_env_mujoco150 import mujoco_env
+import mujoco_py
 
 class HopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
     def __init__(self):
@@ -34,6 +35,7 @@ class HopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def viewer_setup(self):
+        self.viewer.cam.type = mujoco_py.const.CAMERA_TRACKING
         self.viewer.cam.trackbodyid = 2
         self.viewer.cam.distance = self.model.stat.extent * 0.75
         self.viewer.cam.lookat[2] = .8
