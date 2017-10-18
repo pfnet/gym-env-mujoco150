@@ -114,14 +114,11 @@ class MujocoEnv(gym.Env):
             return
 
         if mode == 'rgb_array':
-            pass
-            # TODO:
-            # self._get_viewer().render()
-            # data, width, height = self._get_viewer()._read_pixels_as_in_window()#get_image()
-            # return np.fromstring(data, dtype='uint8').reshape(height, width, 3)[::-1, :, :]
-            # return self._get_viewer()._read_pixels_as_in_window()#get_image()
+            data = self._get_viewer()._read_pixels_as_in_window()
+            return data
         elif mode == 'human':
             self._get_viewer().render()
+            return
 
     def _get_viewer(self):
         if self.viewer is None:
@@ -143,3 +140,4 @@ class MujocoEnv(gym.Env):
             self.data.qpos.flat,
             self.data.qvel.flat
         ])
+    
