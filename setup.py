@@ -3,7 +3,7 @@ from setuptools import setup
 
 install_requires = [
     'gym>=0.9.2',
-    'mujoco-py==1.50.1.22',
+    'mujoco-py<1.50.2,>=1.50.1',
 ]
 
 setup(
