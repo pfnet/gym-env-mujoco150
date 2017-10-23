@@ -10,7 +10,7 @@ setup(
     name='gym-env-mujoco150',
     version='0.1.0',
     packages=['gym_env_mujoco150'],
-    package_data={'gym_env_mujoco150': ['gym_env_mujoco150/assets/*.xml']},
+    package_data={'gym_env_mujoco150': ['assets/*.xml']},
     url='https://github.com/pfnet/gym-env-mujoco150',
     license='',
     author='',
