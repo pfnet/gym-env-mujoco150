@@ -3,6 +3,7 @@ from gym_env_mujoco150.inverted_pendulum import InvertedPendulumEnv
 from gym_env_mujoco150.inverted_double_pendulum import InvertedDoublePendulumEnv
 from gym_env_mujoco150.hopper import HopperEnv
 from gym_env_mujoco150.swimmer import SwimmerEnv
+from gym_env_mujoco150.walker2d import Walker2dEnv
 from gym_env_mujoco150.humanoid import HumanoidEnv
 
 from gym.envs.registration import registry, register, make, spec
@@ -33,6 +34,12 @@ register(
     entry_point='gym_env_mujoco150:SwimmerEnv',
     max_episode_steps=1000,
     reward_threshold=360.0,
+)
+
+register(
+    id='Walker2d-mujoco150-v1',
+    max_episode_steps=1000,
+    entry_point='gym_env_mujoco150:Walker2dEnv',
 )
 
 register(
