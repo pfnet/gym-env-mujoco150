@@ -5,6 +5,7 @@ from gym_env_mujoco150.hopper import HopperEnv
 from gym_env_mujoco150.swimmer import SwimmerEnv
 from gym_env_mujoco150.walker2d import Walker2dEnv
 from gym_env_mujoco150.humanoid import HumanoidEnv
+from gym_env_mujoco150.op3_fullbody import OP3FullbodyEnv
 
 from gym.envs.registration import registry, register, make, spec
 
@@ -45,5 +46,11 @@ register(
 register(
     id='Humanoid-mujoco150-v1',
     entry_point='gym_env_mujoco150:HumanoidEnv',
+    max_episode_steps=1000,
+)
+
+register(
+    id='OP3Fullbody-v1',
+    entry_point='gym_env_mujoco150:OP3FullbodyEnv',
     max_episode_steps=1000,
 )
