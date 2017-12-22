@@ -15,3 +15,7 @@ mujoco version 1.50
 
 * gym 0.9.2
 * mujoco-py 1.50.1
+
+# License
+
+MIT License (see `LICENSE.md` file).
